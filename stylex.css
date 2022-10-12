@@ -1,6 +1,6 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
-body, head {
+html, body {
 	overflow-x: hidden !important;
 }
 
@@ -8,6 +8,8 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%!important;
+  height: 100%!important;
 }
 
 
@@ -22,7 +24,7 @@ canvas {
 
 
 main {
-  width: 100vw;
+/*   width: 100vw; */
   color: white;
   z-index: 99;
   position: absolute;
@@ -38,6 +40,8 @@ h1, h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 canvas {
@@ -50,17 +54,19 @@ canvas {
 
   header {
     background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5rem;
+	grid-column: 2 / span 10;
+    font-size: 1.5rem;
     padding: 2rem;
     margin-bottom: var(--spacing);
   }
 
   section {
-    grid-column: 2 / 8;
+    grid-column: 2 / 10 span;
     padding: 1rem;
     background: var(--dark-bg);
     font-size: 1.25rem;
+	overflow: hidden!important;
+	  text-overflow: ellipsis;
     line-height: 1.5;
     margin-bottom: var(--spacing);
   }
@@ -75,7 +81,7 @@ canvas {
   blockquote p {
     color: black;
     background-color: white;
-    font-size: 4rem;
+    font-size: 3.5rem;
     display: inline;
     line-height: 1;
   }
