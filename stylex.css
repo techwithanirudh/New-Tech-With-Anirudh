@@ -14,7 +14,7 @@ canvas {
 
 
 :root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
+  --dark-bg: rgb(15 15 15 / 61%);
   --spacing: 350px;
 
   font-family: brandon-grotesque, sans-serif;
@@ -81,11 +81,7 @@ canvas {
   blockquote p {
     color: black;
     background-color: white;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     display: inline;
     line-height: 1;
-  }
-
-  .left {
-    grid-column: 6 / 12;
   }
