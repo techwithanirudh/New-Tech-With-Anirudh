@@ -96,8 +96,8 @@ function moveCamera() {
 	moon.rotation.y += 0.075;
 	moon.rotation.z += 0.05;
 
-	anirudh.rotation.y += 0.01;
-	anirudh.rotation.z += 0.01;
+	anirudh.rotation.y = -t * 0.0002;
+	anirudh.rotation.z = -t * 0.0002;
 
 	camera.position.z = t * -0.01;
 	camera.position.x = t * -0.0002;
