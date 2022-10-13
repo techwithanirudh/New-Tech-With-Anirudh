@@ -1,120 +1,149 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
-body, head {
+body,
+head {
 	overflow-x: hidden !important;
 }
 
 canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%!important;
-  height: 100%!important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
 }
-
 
 :root {
-  --dark-bg: rgb(15 15 15 / 61%);
-  --spacing: 350px;
+	--dark-bg: rgb(15 15 15 / 61%);
+	--spacing: 350px;
 
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+	font-family: brandon-grotesque, sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
-
 
 main {
-/*   width: 100vw; */
-  color: white;
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  margin: 0px auto;
-  padding: 120px 0px;
-  
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+	/*   width: 100vw; */
+	color: white;
+	z-index: 99;
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	padding: 120px 0px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 }
 
-h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
+h1,
+h2,
+h3,
+blockquote {
+	font-family: elevon, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-
-  header {
-    background: var(--dark-bg);
+header {
 	grid-column: 2 / span 10;
-    font-size: 1.5rem;
-    padding: 2rem;
-    margin-bottom: var(--spacing);
-  }
+	font-size: 1.5rem;
+	padding: 2rem;
+	top: -50px;
+	position: absolute;
+	margin-bottom: var(--spacing);
+}
 
-  section {
-    grid-column: 2 / 10 span;
-    padding: 1rem;
-    background: var(--dark-bg);
-    font-size: 1.25rem;
-	overflow: hidden!important;
-	  text-overflow: ellipsis;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-  }
+header p {
+	display: none;
+}
 
-  blockquote {
-    margin: 0;
-    padding: 0;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-  }
+section {
+	grid-column: 2 / 10 span;
+	padding: 1rem;
+	background: var(--dark-bg);
+	font-size: 1.25rem;
+	overflow: hidden !important;
+	text-overflow: ellipsis;
+	line-height: 1.5;
+	margin-bottom: var(--spacing);
+}
 
-  blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 3.2rem;
-    display: inline;
-    line-height: 1;
-  }
+blockquote {
+	margin: 0;
+	padding: 0;
+	margin-top: 600px;
+	grid-column: 2 / span 9;
+	margin-bottom: var(--spacing);
+}
 
+blockquote p {
+	color: black;
+	background-color: white;
+	font-size: 3.2rem;
+	display: inline;
+	line-height: 1;
+}
 
 @media only screen and (min-width: 768px) {
-	  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5rem;
-    padding: 2rem;
-    margin-bottom: var(--spacing);
-  }
+	header {
+		background: var(--dark-bg);
+        position: initial;
+        top: 0!important;
+		grid-column: 2 / span 5;
+		font-size: 2.5rem;
+		padding: 2rem;
+		margin-bottom: var(--spacing);
+	}
 
-  section {
-    grid-column: 2 / 8;
-    padding: 1rem;
-    background: var(--dark-bg);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-  }
+	section {
+		grid-column: 2 / 8;
+		padding: 1rem;
+		background: var(--dark-bg);
+		font-size: 1.25rem;
+		line-height: 1.5;
+		margin-bottom: var(--spacing);
+	}
 
-  blockquote {
-    margin: 0;
-    padding: 0;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-  }
+	blockquote {
+		margin: 0;
+        margin-top: 0!important;
+		padding: 0;
+		grid-column: 2 / span 9;
+		margin-bottom: var(--spacing);
+	}
 
-  blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 4rem;
-    display: inline;
-    line-height: 1;
-  }
-	
-  .left {
-    grid-column: 6 / 12;
-  }
+	blockquote p {
+		color: black;
+		background-color: white;
+		font-size: 4rem;
+		display: inline;
+		line-height: 1;
+	}
+
+	.left {
+		grid-column: 6 / 12;
+	}
+
+    header p {
+        display: block;
+    }
 }
 
+.button {
+	background: rgb(255 255 255 / 31%);
+	color: white;
+	padding: 1rem 2rem;
+	border-radius: 32px;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	/* Transition the new color on hover from left to right */
+	transition: all 0.5s ease-in-out;
+	/* Transition the new color on hover from right to left */
+}
+
+.button:hover {
+	background-color: rgb(255 255 255 / 61%);
+	color: black;
+}

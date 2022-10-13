@@ -2,10 +2,15 @@
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(
+	75,
+	window.innerWidth / window.innerHeight,
+	0.1,
+	1000
+);
 
 const renderer = new THREE.WebGLRenderer({
-	canvas: document.querySelector('#bg'),
+	canvas: document.querySelector("#bg"),
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -56,21 +61,24 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
 
 // Avatar
 
-const anirudhTexture = new THREE.TextureLoader().load('anirudh.png');
+const anirudhTexture = new THREE.TextureLoader().load("anirudh.png");
 
-const anirudh = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: anirudhTexture }));
+const anirudh = new THREE.Mesh(
+	new THREE.BoxGeometry(3, 3, 3),
+	new THREE.MeshBasicMaterial({ map: anirudhTexture })
+);
 
 scene.add(anirudh);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const moonTexture = new THREE.TextureLoader().load("moon.jpg");
+const normalTexture = new THREE.TextureLoader().load("normal.jpg");
 
 const moon = new THREE.Mesh(
 	new THREE.SphereGeometry(3, 32, 32),
@@ -86,7 +94,12 @@ moon.position.z = 30;
 moon.position.setX(-10);
 
 anirudh.position.z = -5;
-anirudh.position.x = 2;
+// If the device is a mobile device, then disable the animation
+if (window.innerWidth < 600) {
+	anirudh.position.x = 0;
+} else {
+	anirudh.position.x = 2;
+}
 
 // Scroll Animation
 
